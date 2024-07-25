@@ -4,8 +4,11 @@ LIBS = -lcapstone
 CFLAGS = -W -Wall
 CC = gcc
 
+.PHONY: default
+default: $(BIN)
+
 .PHONY: all
-all: install $(BIN)
+all: install default
 
 $(BIN): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) $(LIBS) -o $(BIN)
