@@ -13,9 +13,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # pkg-config to find it.
 include(FindPkgConfig)
 pkg_check_modules(CAPSTONE REQUIRED capstone)
-if(!CAPSTONE_FOUND)
-  message(FATAL_ERROR "Capstone not found")
-endif()
 
 add_compile_options(-Wall -Wextra -pedantic -Werror)
 
