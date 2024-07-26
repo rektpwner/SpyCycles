@@ -1,14 +1,14 @@
 BIN = spycycles
 SRC = spycycles.c
 LIBS = -lcapstone
-CFLAGS = -W -Wall
+CFLAGS = -Wall -Wextra -pedantic -Werror
 CC = gcc
 
 .PHONY: default
 default: $(BIN)
 
 .PHONY: all
-all: install default
+all: install_deps default
 
 $(BIN): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) $(LIBS) -o $(BIN)
