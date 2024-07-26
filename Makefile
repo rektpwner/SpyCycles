@@ -13,8 +13,8 @@ all: install default
 $(BIN): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) $(LIBS) -o $(BIN)
 
-.PHONY: install
-install:
+.PHONY: install_deps
+install_deps:
 	sudo apt-get install libcapstone-dev
 
 .PHONY: clean
